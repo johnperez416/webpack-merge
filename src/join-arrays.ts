@@ -42,13 +42,18 @@ export default function joinArrays({
             customizeArray,
             customizeObject,
             key: newKey,
-          })
+          }),
         )
       );
     }
 
     if (isPlainObject(b)) {
       return cloneDeep(b);
+
+      // The behavior of structuredClone differs from cloneDeep
+      // so it cannot work as a replacement for all cases although
+      // tests pass with it.
+      // return structuredClone(b);
     }
 
     if (isArray(b)) {

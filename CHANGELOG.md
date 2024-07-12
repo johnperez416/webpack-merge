@@ -1,5 +1,22 @@
 # Changelog
 
+## 6.0.1 / 2024-07-02
+
+- Fix - Restore usage of `clone-deep` as there was a corner case where `structuredClone` did not work as expected. #214
+
+## 6.0.0 / 2024-07-02
+
+- Chore - Update internal dependencies. As a result, the package needs at least Node 18 to run.
+- Chore - Use `structuredClone` over `clone-deep` dependency since it is included to Node 18 or above. #214
+
+## 5.10.0 / 2023-10-16
+
+- Feat - Support object/array-formed condition for `mergeWithRules`. #212
+
+## 5.9.0 / 2023-05-22
+
+- Feat - Support deep merging when rule is a merge. #193, #206
+
 ## 5.8.0 / 2021-06-07
 
 - Docs - Update `env` example to be webpack 5 compatible. #177, #180
@@ -166,7 +183,7 @@ merge.smart(
         loaders: ["react-hot", "babel"],
       },
     ],
-  }
+  },
 );
 // will become
 {
